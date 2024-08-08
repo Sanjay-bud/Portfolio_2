@@ -4,7 +4,7 @@
     /* margin: .5%; */
     box-sizing: border-box;
     text-decoration: none;
-    /* cursor: none; */
+    cursor: none;
 }
 
 :root{
@@ -14,6 +14,36 @@
 
 body{
     font-family: "Poppins", sans-serif;
+}
+
+
+.cursor{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background:var(--primary-color);
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    z-index: 33;
+}
+
+.expand_click{
+    animation: cursor .3s backwards;
+    /* background: var(--primary-color); */
+    border: 1px solid var(--primary-color);
+}
+
+@keyframes cursor{
+    0%{
+        background: var(--secondary-color);
+    }
+    50%{
+        background: var(--primary-color);
+    }
+    100%{
+        background: var(--secondary-color);
+    }
 }
 
 nav{
@@ -37,6 +67,13 @@ nav .left-cont .img_cont{
     width: 4rem;
     border-radius: 50%;
     border: 2px solid var(--primary-color);
+    overflow: hidden;
+}
+
+nav .left-cont .img_cont img{
+    height: 4rem;
+    width: 3rem;
+    margin-left: 3px;
 }
 
 nav .left-cont div p{
@@ -45,7 +82,15 @@ nav .left-cont div p{
     margin-left: 1rem;
 }
 
-nav .right-cont ul li {
+nav .right-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 700ms ease;
+    /* cursor: none; */
+}
+
+nav .right-cont a{
     width: 6.8rem;
     height: 2.6rem;
     background: var(--primary-color);
@@ -55,19 +100,43 @@ nav .right-cont ul li {
     align-items: center;
     justify-content: center;
     transition: 700ms ease;
-}
-
-nav .right-cont ul li a{
     font-size: 1.18rem;
     color: var(--secondary-color);
     font-weight:600;
+    /* cursor: none; */
 }
 
-nav .right-cont .active{
-    background: var(--secondary-color);
-    & a{
-        color: var(--primary-color);
+nav .right-cont:nth-child(2){
+    animation: drop_in 1.5s ease-in-out;
+}
+
+nav .right-cont:nth-child(3){
+    animation: drop_in 2s ease-in-out;
+}
+
+nav .right-cont:nth-child(4){
+    animation: drop_in 2.5s ease-in-out;
+}
+
+nav .right-cont:nth-child(5){
+    animation: drop_in 3s ease-in-out;
+}
+
+@keyframes drop_in{
+    from{
+        transform: translateY(-150px);
+        opacity: 0;
     }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+nav .right-cont .active{
+    background: none;
+    color: var(--primary-color);
     animation: new 1.2s ease-in-out;
 }
 
@@ -241,3 +310,22 @@ main .right_cont{
     }
 
 }
+
+
+.cursor_hover{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    /* background:none; */
+    transform: translateX(-50%) translateY(-50%);
+    /* z-index: 999; */
+    pointer-events: none;
+}
+
+.cursor_hover_inactive{
+    background: none;
+    z-index: 35 ;
+}
+
+
