@@ -560,4 +560,50 @@ main .right_cont{
         top: 120px;
     }
 
+    main .left_cont .l1 p{
+        font-size: 60px;
+    }
+    main .left_cont .l2 p{
+        font-size: 30px;
+    }
+    main .left_cont .l3 p{
+        font-size: 34px;
+    }
+    
+    main .left_cont .l4 p{
+        font-size: 26px;
+    }
+
+    main .left_cont .l5{
+        font-size: 17px;
+        letter-spacing: .7rem;
+    }
+
+}
+
+
+@media  screen and (max-width:700px) {
+    main .left_cont .l1 p{
+        font-size: 40px;
+    }
+    main .left_cont .l2 p{
+        font-size: 20px;
+        letter-spacing: 1.1rem;
+    }
+    main .left_cont .l3 p{
+        font-size: 22px;
+    }
+    
+    main .left_cont .l4 p{
+        font-size: 18px;
+    }
+
+    main .left_cont .l5{
+        font-size: 10px;
+        letter-spacing: .5rem;
+    }
+
+    .cursor{
+        display: none;
+    }
 }
