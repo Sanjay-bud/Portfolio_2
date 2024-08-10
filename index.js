@@ -1,8 +1,7 @@
 const nav_cont = document.querySelectorAll('.nav-item');
-const nav_cont_ind = document.querySelector('.nav-item a');
-const right_cont = document.querySelector('nav .right-cont')
+const nav_cont_ind = document.querySelector('.nav-item');
+const right_cont = document.querySelector('nav .right-cont div')
 
-const nav_ham = document.querySelector('#menu_ham');
 
 const profil_name = document.querySelector('.left-cont p')
 const profil_img = document.querySelector('.left-cont div')
@@ -64,12 +63,6 @@ profil_name.addEventListener('mouseenter',()=>{
 profil_name.addEventListener('mouseleave',()=>{
     cursor.classList.remove('cursor_hover')
     profil_name.removeAttribute('style')
-})
-
-nav_ham.addEventListener('click',()=>{
-    if(right_cont.style.display=='flex')
-        right_cont.style.display='none'
-    right_cont.style.display=='flex'
 })
 
 
