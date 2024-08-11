@@ -9,6 +9,7 @@ const profil_img = document.querySelector('.left-cont div')
 const text_left_cont_home= document.querySelectorAll('.text_high_home')
 
 const cursor = document.querySelector('.cursor')
+const magnet_eff = document.querySelectorAll('.magnet')
 
 
 nav_cont.forEach(e=>{
@@ -63,6 +64,24 @@ profil_name.addEventListener('mouseenter',()=>{
 profil_name.addEventListener('mouseleave',()=>{
     cursor.classList.remove('cursor_hover')
     profil_name.removeAttribute('style')
+})
+
+
+magnet_eff.forEach(mag =>{
+    mag.addEventListener('mousemove',(e)=>{
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let mag_width = mag.clientWidth;
+        let mag_heigh = mag.clientHeight;
+
+        let transX = (x-mag_width/2)
+        let transY = (y-mag_heigh/2)
+
+        mag.style.transform = `translateX(${transX}px) translateY(${transY}px)`
+    })
+    mag.addEventListener('mouseout',(e)=>{
+        mag.style.transform = '';
+    })
 })
 
 
