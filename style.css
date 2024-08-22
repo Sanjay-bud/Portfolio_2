@@ -490,6 +490,16 @@ main .right_cont{
     border-radius: 22px;
     background: var(--primary-color); 
     margin-right: -2rem;
+    animation: back-1 4s linear;
+}
+
+@keyframes back-1{
+    from{
+        margin-right: -10rem;
+    }
+    to{
+        margin-right: -2rem;
+    }
 }
 
 .c-2{
@@ -499,6 +509,16 @@ main .right_cont{
     border-radius: 29px;
     box-shadow: -1px 1px 11.6px 5px var(--primary-color);
     margin-right: -6rem;
+    animation: back 2s linear;
+}
+
+@keyframes back{
+    from{
+        margin-right: -12rem;
+    }
+    to{
+        margin-right: -6rem;
+    }
 }
 
 .c-3{
@@ -512,6 +532,9 @@ main .right_cont{
     display: flex;
     align-items: center;
 }
+
+
+
 
 
 @media screen and (max-width:1390px)  {
