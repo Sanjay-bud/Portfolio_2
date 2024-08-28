@@ -14,7 +14,6 @@ const magnet_eff = document.querySelectorAll('.magnet')
 
 nav_cont.forEach(e=>{
     e.addEventListener('click',ele=>{
-        ele.preventDefault();
 
         nav_cont.forEach(e=>{
             e.classList.remove('active')
@@ -85,26 +84,39 @@ magnet_eff.forEach(mag =>{
 })
 
 
-// text_left_cont_home.forEach(e=>{
-//     e.addEventListener('mouseenter',()=>{
-//         e.classList.add('hover_effect')
-//     })
-// })
+const about = document.querySelector('.About_cont');
+function handleIntersection(entries){
+    entries.map((entry)=>{
+        if(entry.isIntersecting){
+            document.querySelector('.c-1').classList.add('a-ani1');
+            document.querySelector('.c-2').classList.add('a-ani');
+        }
+        else{
+            document.querySelector('.c-1').classList.remove('a-ani1');
+            document.querySelector('.c-2').classList.remove('a-ani');            
+        }
+    });
+}
 
-// text_left_cont_home.forEach(e=>{
-//     e.addEventListener('mouseleave',()=>{
-//         e.classList.remove('hover_effect')
-//     })
-// })
+const observer = new IntersectionObserver(handleIntersection);
+observer.observe(about);
 
-// profil_img.addEventListener('mouseenter',()=>{
-//     cursor.classList.add('cursor_photo')
-//     profil_img.setAttribute('style','transform:scale(1.3);transition:6s ease linear')
-// })
 
-// profil_img.addEventListener('mouseleave',()=>{
-//     cursor.classList.remove('cursor_photo')
-//     profil_img.removeAttribute('style')
-// })
+const project = document.querySelector('.p-cont-in');
+function handleIntersection1(entries){
+    entries.map((entry)=>{
+        if(entry.isIntersecting){
+            document.querySelector('.p-cont-in .co-1').classList.add('p-c1');
+            document.querySelector('.p-cont-in .co-3').classList.add('p-c2');
+        }
+        else{
+            document.querySelector('.p-cont-in .co-1').classList.remove('p-c1');
+            document.querySelector('.p-cont-in .co-3').classList.remove('p-c2');
+        }
+    })
+}
+
+const observer1 = new IntersectionObserver(handleIntersection1);
+observer1.observe(project)
 
 

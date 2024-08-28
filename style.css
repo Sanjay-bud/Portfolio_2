@@ -5,6 +5,7 @@
     box-sizing: border-box;
     text-decoration: none;
     /* cursor: none; */
+    scroll-behavior: smooth ;
 }
 
 :root{
@@ -26,11 +27,11 @@ body{
     transition-duration: 200ms;
     transition-timing-function: ease-out;
     z-index: 33;
+
 }
 
 .expand_click{
     animation: cursor .3s backwards;
-    /* background: var(--primary-color); */
     border: 1px solid var(--primary-color);
 }
 
@@ -45,6 +46,21 @@ body{
         background: var(--secondary-color);
     }
 }
+
+.cursor_hover{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+}
+
+.cursor_hover_inactive{
+    background: none;
+    z-index: 35 ;
+}
+
 
 nav{
     display: flex;
@@ -98,7 +114,6 @@ nav .right-cont div{
     align-items: center;
     justify-content: center;
     transition: 700ms ease;
-    /* cursor: none; */
 }
 
 nav .right-cont div a{
@@ -114,7 +129,6 @@ nav .right-cont div a{
     font-size: 1.18rem;
     color: var(--secondary-color);
     font-weight:600;
-    /* cursor: none; */
 }
 
 nav .right-cont div a:nth-child(2){
@@ -438,23 +452,6 @@ main .right_cont{
 
 }
 
-
-.cursor_hover{
-    height: 4rem;
-    width: 4rem;
-    border-radius: 50%;
-    border: 2px solid var(--secondary-color);
-    /* background:none; */
-    transform: translateX(-50%) translateY(-50%);
-    /* z-index: 999; */
-    pointer-events: none;
-}
-
-.cursor_hover_inactive{
-    background: none;
-    z-index: 35 ;
-}
-
 /* .cursor_photo{
     height: 4rem;
     width: 4rem;
@@ -465,12 +462,16 @@ main .right_cont{
 
 /* ---------------ABOUT----------------------- */
 
+.fake_ab{
+    margin-bottom: 20rem;
+}
+
 .About_cont{
-    margin-top: 11rem;
-    margin-bottom: 15rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-top: -13rem;
+    margin-bottom: 8rem;
 }
 
 .ab-font h2{
@@ -484,13 +485,15 @@ main .right_cont{
     margin-top: 4rem;
 }
 
+
+
 .c-1{
     width: 89px;
     height: 169px; 
     border-radius: 22px;
     background: var(--primary-color); 
     margin-right: -2rem;
-    animation: back-1 4s linear;
+    /* animation: back-1 4s linear; */
 }
 
 @keyframes back-1{
@@ -509,7 +512,7 @@ main .right_cont{
     border-radius: 29px;
     box-shadow: -1px 1px 11.6px 5px var(--primary-color);
     margin-right: -6rem;
-    animation: back 2s linear;
+    /* animation: back 2s linear; */
 }
 
 @keyframes back{
@@ -521,18 +524,154 @@ main .right_cont{
     }
 }
 
+.a-ani{
+    animation: back 2s linear;
+}
+
+.a-ani1{
+    animation: back-1 4s linear;
+}
+
 .c-3{
     width: 737px;
     height: 439px;
     background:var(--primary-color);
     border-radius: 24px;
+    
 }
+
+.c-3 p{
+    color: var(--secondary-color);
+    text-align:justify;
+    font-size: 1.3rem;
+    margin: 2rem;
+}
+
 
 .cover_cont{
     display: flex;
     align-items: center;
 }
 
+
+/* ---------------------------PROJECTS---------------------------- */
+
+#projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p-title{
+    font-size: 2rem;
+}
+
+#projects .p-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+    align-items: center;
+}
+
+.p-more{
+    margin-top: 3rem;
+}
+
+.p-more a h2{
+    color: var(--primary-color);
+}
+
+.p-more a h2:hover{
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 4px;
+    border-radius: 12px;
+    transition: .2s ease;
+}
+
+.p-cont .cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    padding: 2rem;
+    border-radius: 10%;
+}
+
+.p-cont-in{
+    display: flex;
+}
+.p-cont-in .cont{
+    margin: 2rem;
+    position: relative;
+}
+
+.p-cont .cont a{
+    text-decoration: none;
+    color: black;
+}
+
+.p-cont .cont .pic{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 20%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.p-c1{
+    animation:p-c1 2s linear;
+}
+
+@keyframes p-c1{
+    from{
+    transform: translateX(-20rem);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.p-c2{
+    animation: p-c2 2s linear;
+}
+
+@keyframes p-c2{
+    from{
+    transform: translateX(20rem);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.overlay-proj{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    border-radius: 10%;
+    width: 100%;
+    height: 0;
+    transition: 0.3s ease;
+    color: var(--secondary-color);
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.p-cont .cont:hover{
+    .overlay-proj{
+        height: 100%;
+    }
+}
 
 
 
