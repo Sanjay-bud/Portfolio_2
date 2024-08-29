@@ -120,3 +120,17 @@ const observer1 = new IntersectionObserver(handleIntersection1);
 observer1.observe(project)
 
 
+const services = document.querySelector('.cont-all');
+function handleIntersection2(entries){
+    entries.map((entry)=>{
+        if(entry.isIntersecting){
+            document.querySelector('.cont-all').classList.add('c-s-opac');
+        }
+        else{
+            document.querySelector('.cont-all').classList.remove('c-s-opac')
+        }
+    })
+}
+
+const observer2 = new IntersectionObserver(handleIntersection2);
+observer2.observe(services)
