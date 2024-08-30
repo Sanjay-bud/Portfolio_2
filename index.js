@@ -1,4 +1,5 @@
 const nav_cont = document.querySelectorAll('.nav-item');
+const hover = document.querySelectorAll('.hover')
 const nav_cont_ind = document.querySelector('.nav-item');
 const right_cont = document.querySelector('nav .right-cont div')
 
@@ -37,7 +38,7 @@ document.addEventListener('click',()=>{
 
 
 
-nav_cont.forEach(e=>{
+hover.forEach(e=>{
     e.addEventListener('mouseenter',()=>{
         cursor.classList.add('cursor_hover')
         if(e.classList.contains('active'))
@@ -47,7 +48,7 @@ nav_cont.forEach(e=>{
     })
 })
 
-nav_cont.forEach(e=>{
+hover.forEach(e=>{
     e.addEventListener('mouseleave',()=>{
         cursor.classList.remove('cursor_hover')
         e.removeAttribute('style')
