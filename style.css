@@ -991,48 +991,59 @@ footer{
     /* about */
 
     .c-3{
-        width: 300px;
-        height: 250px;
+        width: auto;
+        height: auto
     }
 
     .c-3 p{
-        font-size: .57rem;
+        font-size: 1.2rem;
     }
 
     .ab-font h2{
         font-size: 50px;
-        margin-bottom: -1.6rem;
+        margin-bottom: -1.5rem;
+    }
+
+    .About_cont{
+        margin-bottom: 2rem;
     }
 
     /* projects */
+
+    .p-cont-in{
+        display: block;
+    }
+
     .p-cont .cont .pic{
-        width: 1.7rem;
-        height: 1.7rem;
-        font-size: .8rem;
+        font-size: 2rem; 
     }
 
     .p-title{
         font-size: 1.5rem;
     }
 
-    .p-cont-in .cont{
-        margin: 1rem;
+    #projects .p-cont{
+        margin-bottom: 3rem;
     }
 
     .p-cont .cont a{
-        font-size: .4rem;
+        font-size: .7rem;
         text-align: center;
     }
 
     .p-cont .cont{
-        padding: 1rem;
+        padding: 3rem;
     }
 
     .overlay-proj{
-        font-size: .5rem;
+        font-size: 1rem;
     }
 
     /* services */
+
+    #services{
+        margin-bottom: 3rem;
+    }
 
     #services .s-head{
         font-size: 2rem;
@@ -1044,6 +1055,12 @@ footer{
 
     .cont-all{
         flex-direction: column;
+    }
+
+    /* contact */
+
+    #contact h2{
+        font-size: 2rem;
     }
 
 }
